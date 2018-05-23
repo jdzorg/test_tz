@@ -1,0 +1,181 @@
+@import "normalize"
+@import "fonts"
+
+html, body
+  width: 100%
+  height: 100%
+  font-size: 1rem
+  font-family: 'hnc-roman', sans-serif
+
+/* utils */
+
+.d-f
+  display: flex
+  flex-wrap: wrap
+
+.m-b
+  margin:
+    bottom: 20px
+
+
+/*------*/
+.main-wrapper
+  height: 100%
+
+.box-r, .box-l
+  position: relative
+  width: 100%
+  height: 100%
+  min-height: 1px
+
+.box
+  &-r
+    min-width: 30%
+    flex: 0 0 30%
+    background-color: #fff
+  &-l
+    min-width: 70%
+    flex: 0 0 70%
+    justify-content: center
+    align-items: center
+    background:
+      image: url(../img/tiny/bg_photo.png)
+      size: cover
+      repeat: no-repeat
+      position: center
+      color: #000
+    color: #fff
+    & h1
+      margin:
+        top: 100px
+        bottom: 45px
+      font:
+        family: 'hnc-black', sans-serif
+        size: 4.2rem
+        weight: bold
+      text-transform: uppercase
+      & > span
+        padding: 15px 25px
+        background-color: #ee6513
+    & p
+      font-size: 1.125rem
+      line-height: 2rem
+      & > b
+        font:
+          family: 'hnc-Bold', sans-serif
+          weight: bold
+
+.logo
+  width: 132px
+  height: 127px
+  background:
+    image: url(../img/tiny/logo.png)
+    size: contain
+    repeat: no-repeat
+    position: center
+
+.air-form
+  @media (max-width: 1650px)
+    transform: translate(-40%, -50%)
+  @media (max-width: 1300px)
+    transform: translate(-25%, -50%)
+  position: absolute
+  z-index: 2
+  width: 460px
+  min-height: 570px
+  background-color: rgb(255, 255, 255)
+  box-shadow: 0 25px 38px 0 rgba(21, 21, 24, 0.1)
+  left: 0
+  top: 50%
+  transform: translate(-65%, -50%)
+  & > form
+    flex-direction: column
+    padding: 70px 70px
+    color: #000
+    & input, & button
+      width: 100%
+      border: none
+      transition: .3s ease
+      &:focus
+        outline: none
+    & input
+      padding: 15px 0
+      border-bottom: 1px solid #ebebeb
+      color: #000
+      &:focus
+        border-bottom-color: #26b215
+    & button
+      margin-top: 40px
+      padding: 19px 0
+      cursor: pointer
+      font:
+        family: 'hnc-bold', sans-serif
+        size: .875rem
+        weight: bold
+      text-transform: uppercase
+      color: #fff
+      background-color: #26b215
+      &:hover
+        background-color: #2fa720
+    & a
+      align-self: center
+      margin-top: 30px
+      text-decoration: none
+      color: #bcbcbc
+      border-bottom: 1px dashed #bcbcbc
+      transition: .3s ease
+      &:hover
+        color: #919191
+        border-color: #919191
+
+.select-visual
+  position: relative
+  display: block
+  padding:
+    top: 15px
+    bottom: 15px
+  border-bottom: 1px solid #ebebeb
+  cursor: pointer
+  &.active
+    font-weight: bold
+    &:after
+      transform: rotateX(180deg)
+  &:after
+    content: ''
+    position: absolute
+    display: block
+    width: 12px
+    height: 7px
+    z-index: 2
+    top: 21px
+    right: 10px
+    background-image: url(../img/tiny/carret.png)
+    transition: .3s ease
+
+.select
+  position: relative
+
+#selectDropdown
+  position: absolute
+  display: none
+  z-index: 2
+  padding-bottom: 20px
+  &.active
+    display: flex
+    flex-wrap: wrap
+    left: 0
+    padding-left: 70px
+    background: #fff
+    box-shadow: 0 25px 38px 0 rgba(21, 21, 24, 0.1)
+  & .options
+    flex: 0 0 50%
+    padding: 10px 0
+    cursor: pointer
+    &:hover, &.active
+      color: #0041e5
+
+
+
+
+
+
